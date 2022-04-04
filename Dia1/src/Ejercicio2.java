@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 /*
- * Realizar un programa para el c·lculo de las raÌces de ecuaciÛn de segundo grado, 
- * el programa debe diferenciar entre las raÌces imaginarias, raÌces distintas, raÌces iguales.
+ * Realizar un programa para el c√°lculo de las ra√≠ces de ecuaci√≥n de segundo grado, 
+ * el programa debe diferenciar entre las ra√≠ces imaginarias, ra√≠ces distintas, ra√≠ces iguales.
  */
 public class Ejercicio2 {
 	public static void main(String args[]) {
@@ -20,8 +20,8 @@ public class Ejercicio2 {
 		c = sc.nextInt();
 		
 		discriminante = (float) Math.sqrt(Math.pow(b, 2)- 4 * (a*c));
-		incognitaPositivo = (float) (-b + discriminante / (2*a));
-		incognitaNegativo = (float) (-b - discriminante / (2*a));
+		incognitaPositivo = (float) (-b + Math.sqrt(Math.pow(b, 2)- 4 * (a*c)) / (2*a));
+		incognitaNegativo = (float) (-b - Math.sqrt(Math.pow(b, 2)- 4 * (a*c)) / (2*a));
 		
 		System.out.println("x1 = " + incognitaPositivo);
 		System.out.println("x2 = " + incognitaNegativo);
