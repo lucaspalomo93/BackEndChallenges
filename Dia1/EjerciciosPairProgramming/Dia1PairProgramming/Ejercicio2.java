@@ -1,5 +1,11 @@
 package pairprogramming1;
 
+/*
+* Inciso 2: Pedir por consola la temperatura de los últimos 3 días y en base a esta calcular su promedio. 
+* Además, en base al promedio, mostrar por consola si la temperatura fue fría cuando el promedio sea menor a 0, que fue templada 
+* cuando el promedio fue entre 0 y 20 y que fue cálida cuando el promedio sea mayor a 20.
+*/
+
 import java.util.Scanner;
 
 public class Ejercicio2 {
