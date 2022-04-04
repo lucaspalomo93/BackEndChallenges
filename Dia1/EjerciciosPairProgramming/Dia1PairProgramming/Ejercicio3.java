@@ -2,6 +2,11 @@ package pairprogramming1;
 
 import java.util.Scanner;
 
+/*
+* Se desea crear una biblioteca con 3 autores cargados preciamente. Luego el usuario por teclado puede elegir entre estos y visualizar los libros que ha escrito. 
+* Si el autor no se encuentra entre las posibilidades, mostrar un mensaje de error por consola.
+*/
+
 public class Ejercicio3 {
     public static void main(String[] args) {
         
