@@ -2,6 +2,9 @@ package pairprogramming1;
 
 import java.util.Scanner;
 
+//1 - Crear un programa que permita ingresar un usuario y contraseña por teclado. 
+// Posteriormente pedirle al usuario que reingrese sus datos para validar si coinciden con los ya ingresados.
+
 public class Ejercicio1 {
     public static void main(String[] args) {
         String usuario, contrasenia, usuarioReingresado, contraseniaReingresada;
