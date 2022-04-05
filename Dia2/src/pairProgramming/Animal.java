@@ -13,7 +13,7 @@ public class Animal implements IAtencion {
     private Vector<String> listaSintomas = new Vector<>();
 
     public Animal() {
-
+        menu();
     }
 
     public Animal(String nombre, String raza, int edad, char genero, boolean sintomas) {
@@ -22,6 +22,7 @@ public class Animal implements IAtencion {
         this.edad = edad;
         this.genero = genero;
         this.sintomas = sintomas;
+        menu();
     }
 
     public char getGenero() {
@@ -99,59 +100,38 @@ public class Animal implements IAtencion {
                         this.sintoma = "Mucho maullido / ladrido";
                         this.listaSintomas.add(sintoma);
                         System.out.println("Sintoma cargado!");
-                        System.out.println("Ingrese el numero indicado para cargar un sintoma al animal");
-                        System.out.println("1 - maulla / ladra");
-                        System.out.println("2 - rasquido");
-                        System.out.println("3 - quietud");
-                        System.out.println("4 - vomitos");
-                        System.out.println("5 - salir");
+                        System.out.println("***********************************************");
+                        System.out.println("Desea continuar? 1 o 5");
                         opcion = sc.nextInt();
                         break;
                     case 2:
                         this.sintoma = "Se rasca constantemente";
                         this.listaSintomas.add(sintoma);
                         System.out.println("Sintoma cargado!");
-                        System.out.println("Ingrese el numero indicado para cargar un sintoma al animal");
-                        System.out.println("1 - maulla / ladra");
-                        System.out.println("2 - rasquido");
-                        System.out.println("3 - quietud");
-                        System.out.println("4 - vomitos");
-                        System.out.println("5 - salir");
+                        System.out.println("***********************************************");
+                        System.out.println("Desea continuar? 1 o 5");
                         opcion = sc.nextInt();
                         break;
                     case 3:
                         this.sintoma = "Poca movilidad, mucho tiempo acostado";
                         this.listaSintomas.add(sintoma);
                         System.out.println("Sintoma cargado!");
-                        System.out.println("Ingrese el numero indicado para cargar un sintoma al animal");
-                        System.out.println("1 - maulla / ladra");
-                        System.out.println("2 - rasquido");
-                        System.out.println("3 - quietud");
-                        System.out.println("4 - vomitos");
-                        System.out.println("5 - salir");
+                        System.out.println("***********************************************");
+                        System.out.println("Desea continuar? 1 o 5");
                         opcion = sc.nextInt();
                         break;
                     case 4:
                         this.sintoma = "Vomitos";
                         this.listaSintomas.add(sintoma);
                         System.out.println("Sintoma cargado!");
-                        System.out.println("Ingrese el numero indicado para cargar un sintoma al animal");
-                        System.out.println("1 - maulla / ladra");
-                        System.out.println("2 - rasquido");
-                        System.out.println("3 - quietud");
-                        System.out.println("4 - vomitos");
-                        System.out.println("5 - salir");
+                        System.out.println("***********************************************");
+                        System.out.println("Desea continuar? 1 o 5");
                         opcion = sc.nextInt();
                         break;
                     default:
                         System.out.println("Sintomas desconocidos");
                         System.out.println("Sintoma cargado!");
-                        System.out.println("Ingrese el numero indicado para cargar un sintoma al animal");
-                        System.out.println("1 - maulla / ladra");
-                        System.out.println("2 - rasquido");
-                        System.out.println("3 - quietud");
-                        System.out.println("4 - vomitos");
-                        System.out.println("5 - salir");
+                        System.out.println("***********************************************");
                         opcion = sc.nextInt();
                         break;
                 }
@@ -162,19 +142,29 @@ public class Animal implements IAtencion {
 
     }
 
-    @Override
-    public void tratarSintomas() {
-        System.out.println("Descansar");
-        System.out.println("Rascarse");
-        System.out.println("Lamerse");
-    }
-
     public void mostrarSintomas() {
         if (sintomas) {
             System.out.println("********* LISTA DE SINTOMAS **********");
             for (int i = 0; i < this.listaSintomas.size(); i++) {
                 System.out.println("Sintoma: " + listaSintomas.get(i));
             }
+        }
+        System.out.println("********************************************");
+    }
+
+    private void menu() {
+        int opcionMenu = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("************** SINTOMAS ANIMAL ***************");
+        System.out.println("Ingrese una opcion para continuar: ");
+        System.out.println("1 para continuar o 2 para salir");
+        opcionMenu = sc.nextInt();
+        while (opcionMenu != 2) {
+            alertarSintomas();
+            mostrarSintomas();
+            System.out.println("Ingrese una opcion para continuar: ");
+            System.out.println("1 para continuar o 2 para salir");
+            opcionMenu = sc.nextInt();
         }
     }
 
