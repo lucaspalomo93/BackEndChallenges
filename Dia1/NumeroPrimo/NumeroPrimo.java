@@ -2,6 +2,7 @@ package triangulo;
 
 import java.util.Scanner;
 
+//Numeros primos
 public class NumeroPrimo {
 
     public static void main(String[] args) {
