@@ -101,7 +101,7 @@ public class Animal implements IAtencion {
                         this.listaSintomas.add(sintoma);
                         System.out.println("Sintoma cargado!");
                         System.out.println("***********************************************");
-                        System.out.println("Desea continuar? 1 o 5");
+                        System.out.println("Desea continuar? 1 continuar o 5 salir");
                         opcion = sc.nextInt();
                         break;
                     case 2:
@@ -109,7 +109,7 @@ public class Animal implements IAtencion {
                         this.listaSintomas.add(sintoma);
                         System.out.println("Sintoma cargado!");
                         System.out.println("***********************************************");
-                        System.out.println("Desea continuar? 1 o 5");
+                        System.out.println("Desea continuar? 1 continuar o 5 salir");
                         opcion = sc.nextInt();
                         break;
                     case 3:
@@ -117,7 +117,7 @@ public class Animal implements IAtencion {
                         this.listaSintomas.add(sintoma);
                         System.out.println("Sintoma cargado!");
                         System.out.println("***********************************************");
-                        System.out.println("Desea continuar? 1 o 5");
+                        System.out.println("Desea continuar? 1 continuar o 5 salir");
                         opcion = sc.nextInt();
                         break;
                     case 4:
@@ -125,13 +125,13 @@ public class Animal implements IAtencion {
                         this.listaSintomas.add(sintoma);
                         System.out.println("Sintoma cargado!");
                         System.out.println("***********************************************");
-                        System.out.println("Desea continuar? 1 o 5");
+                        System.out.println("Desea continuar? 1 continuar o 5 salir");
                         opcion = sc.nextInt();
                         break;
                     default:
                         System.out.println("Sintomas desconocidos");
-                        System.out.println("Sintoma cargado!");
                         System.out.println("***********************************************");
+                        System.out.println("Desea continuar? 1 continuar o 5 salir");
                         opcion = sc.nextInt();
                         break;
                 }
