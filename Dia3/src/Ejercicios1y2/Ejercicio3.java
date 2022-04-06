@@ -1,3 +1,5 @@
+package Ejercicios1y2;
+
 
 import java.util.Scanner;
 
