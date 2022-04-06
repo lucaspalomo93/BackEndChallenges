@@ -30,11 +30,9 @@ public class TestAviones {
         aeromozas.add(aeromoza2);
         
         AvionPasajeros avionPasajero1 = new AvionPasajeros(6, 100, 50, aeromozas, pasajeros, 5, 400);
-        avionPasajero1.despegar();
-        avionPasajero1.aterrizar();
-        avionPasajero1.cargarEquipaje();
-        avionPasajero1.comprobarEspacio();
-        avionPasajero1.listarPasajeros();
+//        avionPasajero1.cargarEquipaje();
+//        avionPasajero1.comprobarEspacio();
+//        avionPasajero1.listarPasajeros();
         
         Combate avionCombate1 = new Combate(2, 150, 25.50f, 6, 100);
         avionCombate1.accionesEvasivas();
