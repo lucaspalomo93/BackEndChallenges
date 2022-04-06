@@ -15,8 +15,9 @@ public class Ejercicio5 {
     public static void main(String[] args) {
         String nombrep1, nombrep2, palabra;
         int puntosp1 = 0, puntosp2 = 0;
-        String letra;
-        int oportunidades = 6;
+        String letra, pista;
+        int oportunidadesJugador1 = 6, oportunidadesJugador2 = 6, cambio = 0;
+        String [] letras;
 
         Scanner sc = new Scanner(System.in);
 
@@ -28,33 +29,50 @@ public class Ejercicio5 {
 
         System.out.println("Ingrese una palabra: ");
         palabra = sc.nextLine();
-
-        System.out.println("Tiene " + oportunidades + " oportunidades de adivinar la palabra!");
-        System.out.println("El jugador con mas puntos gana!");
-        while (oportunidades > 0 && puntosp1 < 6 && puntosp2 < 6) {
-            System.out.println("Quedan " + oportunidades + " oportunidades");
-            System.out.println("Que letra elige? ");
-            letra = sc.nextLine();
-            if (oportunidades % 2 == 1) {
-                System.out.println("Turno jugador 1: ");
-                if (checkLetra(letra, palabra)) {
-                    System.out.println("La letra estaba en la palabra!");
-                    puntosp1++;
-                    System.out.println("El jugador 1 tiene: " + puntosp1);
-                } else {
-                    System.out.println("No estaba la letra");
-                }
-            } else if (oportunidades % 2 == 0) {
-                System.out.println("Turno jugador 2: ");
+        
+        letras = palabra.split("");
+                
+        System.out.println("Ingrese una pista: ");
+        pista = sc.nextLine();
+        
+        while (oportunidadesJugador1 > 0 && oportunidadesJugador2 > 0 && puntosp1 < 6 && puntosp2 < 6) {
+            
+            if (cambio % 2 == 1) {
+                System.out.println("************* Turno jugador 2: **************");
+                System.out.println("Recuerde la pista: " + pista);
+                System.out.println("Que letra elige? ");
+                letra = sc.nextLine();
                 if (checkLetra(letra, palabra)) {
                     System.out.println("La letra estaba en la palabra!");
                     puntosp2++;
-                    System.out.println("El jugador 2 tiene: " + puntosp2);
+                    System.out.println("El jugador 2 tiene: " + puntosp2 + " puntos");
+                    System.out.println("Le quedan " + oportunidadesJugador2 + " oportunidades");
                 } else {
                     System.out.println("No estaba la letra");
+                    System.out.println("El jugador 2 tiene: " + puntosp2 + " puntos");
+                    oportunidadesJugador2--;
+                    System.out.println("Le quedan " + oportunidadesJugador2 + " oportunidades");
+                    
+                }
+            } else if (cambio % 2 == 0) {
+                System.out.println("********* Turno jugador 1: ************");
+                System.out.println("Recuerde la pista: " + pista);
+                System.out.println("Que letra elige? ");
+                letra = sc.nextLine();
+                if (checkLetra(letra, palabra)) {
+                    System.out.println("La letra estaba en la palabra!");
+                    puntosp1++;
+                    System.out.println("El jugador 1 tiene: " + puntosp1 + " puntos");
+                    System.out.println("Le quedan " + oportunidadesJugador1 + " oportunidades");
+                } else {
+                    System.out.println("No estaba la letra");
+                    System.out.println("El jugador 1 tiene: " + puntosp1 + " puntos");
+                    oportunidadesJugador1--;
+                    System.out.println("Le quedan " + oportunidadesJugador1 + " oportunidades");
+                    
                 }
             }
-            oportunidades--;
+            cambio++;
         }
 
         if (puntosp1 > puntosp2) {
