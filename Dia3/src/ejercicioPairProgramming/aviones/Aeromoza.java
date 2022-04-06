@@ -4,6 +4,13 @@ public class Aeromoza {
     private String nombre;
     private String apellido;
 
+    public Aeromoza(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+    
+    
+
     public String getNombre() {
         return nombre;
     }
