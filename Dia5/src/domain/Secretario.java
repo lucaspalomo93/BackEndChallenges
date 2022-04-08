@@ -40,8 +40,8 @@ public class Secretario extends Empleado {
     }
 
     public double incrementarSalario() {
-        double totalAumento = (this.porcentajeAumento * super.getSalario()) / 100;
-        double total = (super.getSalario() + totalAumento) * super.getAniosAntiguedad();
+        double totalAumento = (this.porcentajeAumento * getSalario()) / 100;
+        double total = (getSalario() + totalAumento) * getAniosAntiguedad();
         return total;
     }
 
