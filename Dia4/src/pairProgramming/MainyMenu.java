@@ -21,7 +21,7 @@ public class MainyMenu {
         boolean termino = false;
         boolean gano = false;
 
-        String1 nombre = "";
+        String nombre = "";
         do {
             menuPrincipal();
             opcion1 = scan.nextInt();
