@@ -1,5 +1,6 @@
 package domain;
 
+//Clase madre
 public abstract class Persona {
     private String nombre;
     private String apellido;
