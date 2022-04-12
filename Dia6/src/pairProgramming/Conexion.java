@@ -3,7 +3,7 @@ package pairProgramming;
 public class Conexion {
     
 
-//    SINGLETONE
+//    //SINGLETONE
 //    private static Conexion conexion;
 //    
 //    private Conexion(){

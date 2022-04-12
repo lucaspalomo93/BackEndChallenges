@@ -13,8 +13,4 @@ public class Electrodomestico extends Producto{
     }
 
 
-//    
-//    public int mostrarDiasDeGarantia(){
-//        return this.diasDeGarantia;
-//    }
 }

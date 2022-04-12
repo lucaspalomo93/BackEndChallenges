@@ -23,9 +23,4 @@ public class Alimento extends Producto{
         this.tipoDeAlimento = tipoDeAlimento;
     }
     
-//    public boolean isVencido(){
-//        return this.estaVencido;
-//    }
-    
-    
 }
