@@ -11,7 +11,8 @@ public class Cliente {
     private Date fecha_nacimiento;
     private int vendedor_idvendedor;
 
-    public Cliente(String nombre, String apellido, int dni, String direccion, Date fecha_nacimiento, int vendedor_idvendedor) {
+    public Cliente(int idCliente, String nombre, String apellido, int dni, String direccion, Date fecha_nacimiento, int vendedor_idvendedor) {
+        this.idCliente = idCliente;
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -19,6 +20,7 @@ public class Cliente {
         this.fecha_nacimiento = fecha_nacimiento;
         this.vendedor_idvendedor = vendedor_idvendedor;
     }
+
 
     public int getIdCliente() {
         return idCliente;

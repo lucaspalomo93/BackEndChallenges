@@ -4,19 +4,19 @@ import com.mycompany.dia8.Conexion;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class ClienteDao implements IDao {
 
-    private static final String SQL_SELECT = "SELECT * FROM cliente";
+    private static final String SQL_SELECT = "SELECT idCliente, nombre, apellido, dni, direccion, fecha_nacimiento, vendedor_idvendedor FROM cliente";
 
     @Override
     public List<Cliente> listar() {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        List<Cliente> clientes = new ArrayList<Cliente>();
+        List<Cliente> clientes = new ArrayList<>();
+
 
         try {
             conn = Conexion.getConection();
@@ -30,29 +30,40 @@ public class ClienteDao implements IDao {
                 String direccion = rs.getString("direccion");
                 Date fecha_nacimiento = rs.getDate("fecha_nacimiento");
                 int vendedor_idvendedor = rs.getInt("vendedor_idvendedor");
-                
-                Cliente cliente = new Cliente("Lucas", "Palomo", 111222334, "calle 123", 31/07/1993, vendedor_idvendedor);
+
+                Cliente cliente = new Cliente(idCliente, nombre,apellido , dni, direccion, fecha_nacimiento, vendedor_idvendedor);
                 clientes.add(cliente);
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                Conexion.close(rs);
+                Conexion.close(stmt);
+                Conexion.close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
         }
+        return clientes;
     }
 
     @Override
-    public void insertar() {
+    public Object insertar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void actualizar() {
+    public Object actualizar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void eliminar() {
+    public Object eliminar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+
 
 }
