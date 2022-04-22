@@ -23,6 +23,7 @@ import io.swagger.annotations.Api;
 
 @RestController
 @RequestMapping("/aviones")
+@Api(value = "Controller de aviones")
 public class AvionController {
 
 	@Autowired
