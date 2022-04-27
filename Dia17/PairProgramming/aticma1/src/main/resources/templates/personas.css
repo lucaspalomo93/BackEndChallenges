@@ -1,0 +1,7 @@
+h2, h1{
+			text-align: center;
+			padding: 10px 20px;
+			background-color: yellow;
+			border: 5px solid blue;
+			border-radius: 10px;
+} 

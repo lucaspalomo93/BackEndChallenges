@@ -1,0 +1,24 @@
+
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<title th:text="${titulo}"></title>
+		<link href="personas.css" rel="stylesheet"></link>
+	</head>
+	
+	<body>
+		<h1 th:text="${titulo}"></h1>	
+		
+		<li th:each= "persona : ${personas}" th:text="${persona.nombre + ' - ' + persona.edad}"></li>
+		
+		
+		<h2>Personas mayores de 20</h2>
+		<div th:each="persona : ${personas}">
+			<li  th:if="${persona.edad > 20 } "th:text="${persona.nombre +' - ' + persona.apellido} "></li>
+		</div>
+		
+		</body>
+
+
+</htmL>
