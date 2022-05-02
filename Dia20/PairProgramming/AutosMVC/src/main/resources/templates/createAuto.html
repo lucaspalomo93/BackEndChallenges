@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+</head>
+<body>
+<!--
+		<form th:acction="@{/autos/create}" th:object="${auto}" method="post">
+			<label>Id: </label>
+	        <input type="text" name="firstName" th:field="*{id}"/>
+	        <br>
+	        <label>Marca: </label>
+	        <input type="text" name="lastName" th:field="*{marca}"/>
+	        <br>
+	        <label>Modelo: </label>
+	        <input type="text" name="dni" th:field="*{modelo}"/>
+	        <br>
+	       	<label>Cant. Puertas: </label>
+	        <input type="text" name="dni" th:field="*{cantPuertas}"/>
+	        <br>
+	       	<label>Precio: </label>
+	        <input type="text" name="dni" th:field="*{precio}"/>
+	        <br>
+	        <button type="submit">
+	            Create Auto
+	        </button>
+	        <br>
+		</form>
+		 ---------------------------- -->
+		 
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">Creacion De Autos</a>
+
+            <!-- Toggler/Collapse Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar links -->
+        </nav>
+<div class="container mt-3">
+            <div class="row">
+                <div class="col-12 container justify-content-center card">
+                    <h1 class = "text-center" th:text="${title}"></h1>
+                    <div class="card-body">
+		<form th:action="@{/autos/create}" th:object="${auto}" method="POST">
+                        <div class="form-group">
+                            <label>Id</label>
+                            <input type="text" name="id" th:field="*{id}"
+                                   class="form-control"
+                                   placeholder="Ingrese el id" />
+                                   <input type="hidden" name="id" th:field="*{id}"
+                                   class="form-control"  />
+                        </div>
+                        
+                         <div class="form-group">
+                            <label>Marca</label>
+                            <input type="text" name="marca" th:field="*{marca}"
+                                   class="form-control"
+                                   placeholder="Ingrese la marca" />
+                        </div>
+                        
+                         <div class="form-group">
+                            <label>Modelo</label>
+                            <input type="text" name="modelo" th:field="*{modelo}"
+                                   class="form-control"
+                                   placeholder="Ingrese el modelo" />
+                        </div>
+                        
+                         <div class="form-group">
+                            <label>Cant. Puertas</label>
+                            <input type="text" name="puertas" th:field="*{cantPuertas}"
+                                   class="form-control"
+                                   placeholder="Ingrese cant. Puertas" />
+                        </div>
+                        <div class="form-group">
+                            <label>Precio</label>
+                            <input type="text" name="precio" th:field="*{precio}"
+                                   class="form-control"
+                                   placeholder="Ingrese precio" />
+                        </div>
+                        
+                           <div class="box-footer">
+                            <button type="submit" class="btn btn-primary">Crear Auto</button>
+                        </div>
+
+                    </form>     
+  </div>
+            </div>
+<!-- /.container -->
+		
+</body>
+</html>
