@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Removing Client</h1>
+	
+		<form th:acction="@{clients/delete}" th:object="${client}" method="delete">
+			<label>ID: </label>
+	        <input type="text" name="firstName" th:field="*{id}"/>
+	        <button type="submit">
+	            Delete Client
+	        </button>
+        </form>
+        <a th:href="@{/clients}">Volver</a>
+</body>
+</html>
