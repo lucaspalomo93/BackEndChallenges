@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/crear}" th:object="${cliente}" method="POST">
+		<input type="hidden" th:field="*{id}"/>
+	
+		<div>
+			<label for="Nombre">Nombre</label>
+			<input name="nombre" id="nombre" th:field="*{nombre}"/>
+		</div>
+		<div>
+			<label for="Nombre">Apellido</label>
+			<input name="nombre" id="nombre" th:field="*{apellido}"/>
+		</div>
+		<div>
+			<label for="Nombre">DNI</label>
+			<input name="nombre" id="nombre" th:field="*{dni}"/>
+		</div>
+		<div>
+			<input type="submit" value="Enviar" />
+		</div>
+	</form>
+</body>
+</html>
