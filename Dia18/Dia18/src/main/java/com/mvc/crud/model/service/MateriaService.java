@@ -1,4 +1,4 @@
-package com.mvc.crud.service;
+package com.mvc.crud.model.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mvc.crud.model.Materia;
-import com.mvc.crud.repository.MateriaRepository;
+import com.mvc.crud.model.repository.IMateriaRepository;
 
 @Service
 public class MateriaService {
 
 	@Autowired
-	private MateriaRepository mRepository;
+	private IMateriaRepository mRepository;
 	
 	List<Materia> findAll(){
 		return mRepository.findAll();

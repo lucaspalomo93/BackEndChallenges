@@ -1,6 +1,4 @@
-package com.mvc.crud.repository;
-
-import java.util.List;
+package com.mvc.crud.model.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -8,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.mvc.crud.model.Estudiante;
 
 @Repository
-public interface EstudianteRepository extends JpaRepository<Estudiante, Long>{
+public interface IEstudianteRepository extends JpaRepository<Estudiante, Long>{
 
 	
 }
