@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<td>Id</td>
+				<td>Usuario</td>
+				<td>Nombre</td>
+				<td>Email</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="usuario : ${usuarios}">
+				<td th:text="${usuario.id}"></td>
+				<td th:text="${usuario.username}"></td>
+				<td th:text="${usuario.name}"></td>
+				<td th:text="${usuario.email}"></td>
+				<td ><a th:href="@{'/usuario/delete/' + ${usuario.id}}">Eliminar</a></td>
+				<td ><a th:href="@{'/usuario/update/' + ${usuario.id}}">Editar</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+	<!-- th:if="${nroPaginas > 0}" -->
+		<a th:if="${nroPaginas > 0}" th:href="@{'/usuario/'+${nroPaginas-1}}">Anterior</a>
+		<a th:if="${!usuarios.isEmpty()}" th:href="@{'/usuario/'+${nroPaginas+1}}">Siguiente</a>
+	</div>
+	
+	<div>
+		<a th:href="@{/usuario/create}">Crear</a>
+	</div>
+</body>
+</html>
