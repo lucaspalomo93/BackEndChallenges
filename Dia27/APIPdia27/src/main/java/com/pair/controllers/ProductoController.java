@@ -19,7 +19,7 @@ import com.pair.models.Producto;
 import com.pair.services.ProductoService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/productos")
 public class ProductoController {
 	
 	@Autowired

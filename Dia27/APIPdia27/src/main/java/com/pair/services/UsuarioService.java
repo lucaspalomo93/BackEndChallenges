@@ -1,46 +1,45 @@
 package com.pair.services;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.pair.models.Rol;
 import com.pair.models.Usuario;
 import com.pair.repositories.IUsuarioRepository;
 
-@Service
-public class UsuarioService {
+@Service("userDetailsService")
+public class UsuarioService implements UserDetailsService{
+
 	@Autowired
 	private IUsuarioRepository uRepository;
 	
-	public List<Usuario> findAll(){
-		return uRepository.findAll();
-	}
-	
-	public Optional<Usuario> findById(Long id) {
-		if(uRepository.existsById(id)) {
-			return uRepository.findById(id);
+	@Override
+	@Transactional(readOnly = true)
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		Usuario usuario = uRepository.findByUsername(username);
+		
+		if(username == null) {
+			throw new UsernameNotFoundException(username);
 		}
-		return null;
-	}
-	
-	public Usuario save(Usuario usuario) {
-		return uRepository.save(usuario);
-	}
-	
-	public Usuario updateUsuario(Usuario usuario) {
-		if(uRepository.existsById(usuario.getId())) {
-			return uRepository.save(usuario);
+		
+		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+		
+		for(Rol rol : usuario.getRoles()) {
+			authorities.add(new SimpleGrantedAuthority(rol.getNombre()));
 		}
-		return null;
+		
+		return new User(usuario.getUsername(), usuario.getPassword(), authorities);
 	}
 	
-	public boolean deleteById(Long id) {
-		if(uRepository.existsById(id)) {
-			uRepository.deleteById(id);
-			return true;
-		}
-		return false;
-	}
+	
 }

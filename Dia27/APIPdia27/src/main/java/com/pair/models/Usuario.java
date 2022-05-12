@@ -1,6 +1,7 @@
 package com.pair.models;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -11,7 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -35,9 +39,8 @@ public class Usuario {
 	private String apellido;
 
 
-	@ManyToMany
-	@JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id"), 
-		inverseJoinColumns = @JoinColumn(name = "rol_id", referencedColumnName = "id"))
-	private Set<Rol> roles = new HashSet<>();
+	@OneToMany
+	@JoinColumn(name="id_usuario")
+	private List<Rol> roles;
 
 }

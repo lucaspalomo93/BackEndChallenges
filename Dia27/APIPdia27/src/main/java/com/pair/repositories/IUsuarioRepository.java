@@ -10,6 +10,5 @@ import com.pair.models.Usuario;
 @Repository
 public interface IUsuarioRepository extends JpaRepository<Usuario, Long>{
 	
-	public Optional<Usuario> findByUsername(String username);
-	public Optional<Usuario> existsByUsername(String username);
+	Usuario findByUsername(String username);
 }
